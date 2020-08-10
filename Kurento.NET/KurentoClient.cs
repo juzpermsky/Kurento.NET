@@ -127,6 +127,7 @@ namespace Kurento.NET
             var jsonStr = JsonConvert.SerializeObject(request, jsonSetting);
             _logger.LogInformation(jsonStr);
             requests[requestId] = jsonStr;
+
             var buffer = Encoding.UTF8.GetBytes(jsonStr);
             await WaitConnectedAsync();
             await clientWebSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);

@@ -12,9 +12,9 @@ namespace Kurento.NET
 	{
 
 		public async Task<ServerInfo> GetInfoAsync()
-        {
-            return (await client.InvokeAsync(this, "getInfo")).GetValue<ServerInfo>();
-        }
+		{
+			return (await client.InvokeAsync(this, "getInfo")).GetValue<ServerInfo>();
+		}
 		public async Task<MediaPipeline[]> GetPipelinesAsync()
         {
             return (await client.InvokeAsync(this, "getPipelines")).GetValue<MediaPipeline[]>();
